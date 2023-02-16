@@ -151,7 +151,7 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 # wea, temperature, highest, lowest = get_weather()
 area, weather, real, lowest, highest, wind, windsc, tips, week, sunrise, sunset, humidity = get_weather1()
-pm25 = get_weather3()
+# pm25 = get_weather3()
 lubarmonth, lunarday, jieqi, lunar_festival, festival = get_lunar_calendar()
 url = "https://www.baidu.com/"
 data = {
@@ -250,10 +250,10 @@ data = {
         "color":get_random_color()
     },
     #pm25
-    "pm25": {
-        "value":pm25,
-        "color":get_random_color()
-    },
+#     "pm25": {
+#         "value":pm25,
+#         "color":get_random_color()
+#     },
     "sunrise":{
         "value":sunrise,
         "color":get_random_color()
