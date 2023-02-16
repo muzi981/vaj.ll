@@ -77,7 +77,7 @@ def get_weather1():
   res1 = requests.get(url).json()
   muzi = res1['newslist'][0]
   #area 城市  weather = 今天天气  real = 当前温度  lowest = 最低气温  highest= 最高气温  wind = 风项  windsc = 风力
-  return muzi['area'], muzi['weather'], muzi['real'], muzi['lowest'], muzi['highest'], muzi['wind'], muzi['windsc'], muzi['tips'], muzi['week'], muzi['sunrise'], muzi['sunset'], muzi['humidity']
+  return muzi['area'], muzi['weather'], muzi['real'], muzi['lowest'], muzi['highest'], muzi['wind'], muzi['windsc'], muzi['tips'], muzi['week'], muzi['sunrise'], muzi['sunset'], muzi['humidity'], muzi['aqi']
 
 #墨迹天气pm25
 def get_weather3():
@@ -150,7 +150,7 @@ def get_1():
 client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 # wea, temperature, highest, lowest = get_weather()
-area, weather, real, lowest, highest, wind, windsc, tips, week, sunrise, sunset, humidity = get_weather1()
+area, weather, real, lowest, highest, wind, windsc, tips, week, sunrise, sunset, humidity, aqi = get_weather1()
 # pm25 = get_weather3()
 lubarmonth, lunarday, jieqi, lunar_festival, festival = get_lunar_calendar()
 url = "https://www.baidu.com/"
@@ -250,10 +250,10 @@ data = {
         "color":get_random_color()
     },
     #pm25
-#     "pm25": {
-#         "value":pm25,
-#         "color":get_random_color()
-#     },
+    "pm25": {
+        "value":aqi,
+        "color":get_random_color()
+    },
     "sunrise":{
         "value":sunrise,
         "color":get_random_color()
