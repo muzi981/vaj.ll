@@ -73,7 +73,7 @@ def get_birthday_s():
 
 #天行数据api  https://api.tianapi.com/tianqi/index?key=19131d4a18378e7b5ff4c44a608b03d3&city=
 def get_weather1():
-  url = "https://api.tianapi.com/tianqi/index?key=19131d4a18378e7b5ff4c44a608b03d3&city=" + city
+  url = "https://api.tianapi.com/tianqi/index?key=19131d4a18378e7b5ff4c44a608b03d3&type=1&city=" + city
   res1 = requests.get(url).json()
   muzi = res1['newslist'][0]
   #area 城市  weather = 今天天气  real = 当前温度  lowest = 最低气温  highest= 最高气温  wind = 风项  windsc = 风力
